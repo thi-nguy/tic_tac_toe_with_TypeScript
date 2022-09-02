@@ -2,14 +2,16 @@ import React from "react";
 import StyledBoard from "./styles/StyledBoard";
 import Box from "./Box";
 
-type BoardProps = {
+interface BoardProps {
     board_value: string[];
+    board_onClick: (index: number) => void;
 }
-const Board = ({ board_value }: BoardProps) => {
+
+const Board: React.FC <BoardProps> = ( {board_value, board_onClick}) => {
   return (
     <StyledBoard>{ board_value.map( (value, index) => { 
         return (
-            <Box box_value={value} box_id={index} /> 
+            <Box box_value={value} box_onClick={ () => board_onClick(index)} /> 
         )
     })}</StyledBoard>
   );

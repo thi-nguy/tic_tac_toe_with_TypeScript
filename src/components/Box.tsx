@@ -1,13 +1,13 @@
 import React from "react";
 import StyledBox from "./styles/StyledBox";
 
-type BoxProps = {
+interface BoxProps {
     box_value: string;
-    box_id: number;
+    box_onClick: React.MouseEventHandler<HTMLButtonElement>
 };
 
-const Box = ({ box_value, box_id }: BoxProps) => {
-  return <StyledBox value={box_value}> {box_value} </StyledBox>;
+const Box = ({ box_value, box_onClick }: BoxProps) => {
+  return <StyledBox value={box_value} onClick={box_onClick}> {box_value} </StyledBox>;
 };
 
 export default Box;
