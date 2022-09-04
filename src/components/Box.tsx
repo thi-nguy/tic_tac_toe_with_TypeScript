@@ -6,7 +6,7 @@ interface BoxProps {
     box_onClick: React.MouseEventHandler<HTMLButtonElement>
 };
 
-const Box = ({ box_value, box_onClick }: BoxProps) => {
+const Box: React.FC<BoxProps> = ({ box_value, box_onClick }) => {
   return <StyledBox value={box_value} onClick={box_onClick}> {box_value} </StyledBox>;
 };
 
